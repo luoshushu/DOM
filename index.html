@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            padding:10px;
+            margin-bottom: 10px;
+            border:1px solid #ccc;
+            box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.2);
+        }
+        .box.active{
+            background: darkgoldenrod;
+            color: #fff;
+        }
+        .box2.setting{
+            color: #fff;
+            font-size: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+ <div class="box">
+    <h1 class="box2">hello</h1>
+    <p class="box2">jirengu</p>
+ </div>
+ <button id="add">add</button>
+ <button id="remove">remove</button>
+ <button id="toggle1">toggle1</button>
+ <button id="toggle2">toggle2</button>
+
+
+ <script>
+     var addBtn = document.querySelector('#add')
+     var removeBtn = document.querySelector('#remove')
+     var toggle1Btn = document.querySelector('#toggle1')
+     var toggle2Btn = document.querySelector('#toggle2')
+     var boxPanel = document.querySelector('.box')
+     var box2Panel = document.querySelector('.box2')
+
+     addBtn.onclick = function(){
+         boxPanel.classList.add('active')
+     }
+     removeBtn.onclick = function () {
+         boxPanel.classList.remove('active')
+     }
+     toggle1Btn.onclick = function () {
+         if(boxPanel.classList.contains('active')){
+             boxPanel.classList.remove('active')
+         }else {
+             boxPanel.classList.add('active')
+         }
+     }
+     toggle2Btn.onclick = function () {
+         boxPanel.classList.toggle('active')
+         box2Panel.classList.toggle('setting')
+
+     }
+
+ </script>
+</body>
+</html>
